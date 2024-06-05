@@ -89,7 +89,7 @@ body{
 #nav-bar a {
     /* margin: auto; */
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     text-decoration: none; /* Remove underline from links */
     color: #ffffff; /* Example text color */
@@ -111,7 +111,7 @@ button {
     border-radius: 5px;
     background: #77d1d2;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.0em;
     color:#ffffff;
     outline: none;
     margin-top: 5px;
@@ -127,4 +127,7 @@ button {
  #iiitm{
     width:100vw;
     height:8vh;
+ }
+ #over{
+    color: gray;
  }
