@@ -1,8 +1,15 @@
+html {
+    scroll-padding-top: 83px; /* Adjust this value to match your navbar height */
+  }
+
+
 body{
     margin: 0; /* Remove default margin for better layout */
     padding:0;
     font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-    overflow: scroll;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+
 }
 #background-content {
     position: relative;
@@ -34,7 +41,7 @@ body{
 #sliding-page {
     position: absolute;
     top: 0;
-    height: 100vh;
+    /* height: 100vh; */
     right: -100%; /* Start the sliding page completely off-screen to the left */
     width: 100%; /* Set width to full viewport width */
     background-color: #ffffff; /* Example background color */
@@ -46,63 +53,81 @@ body{
  right: 0; /* Animate the sliding page to the left position */
 }
 #cdp {
-    position: absolute; /* Position the logo absolutely for corner placement */
-    top: 0; /* Align to the top of the page */
-    right: 0; /* Align to the right side of the page */
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-#cdp img { /* Style the logo image within the container */
-    width: 150px; /* Set logo width */
-    height: 120px; /* Set logo height */
+#cdp img {
+    width: 150px;
+    height: 90px;
 }
-.grey{
- background-color: rgb(255, 255, 255);
- padding-bottom: 0%;
+
+.grey {
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 0;
 }
-#nav-bar{
-    margin-top: 0%;
-    background-color: #6676be;;
-    height:10%;
-    display: flex;
-    /* position: fixed; */
-    align-items: center;
-    justify-content: center;
-}
-#clg img{
-    width: 90px; /* Set logo width */
-    height: 100px; /* Set logo height */
+
+#clg img {
+    width: 460px;
+    height: 75px;
     padding-top: 0.5%;
     padding-left: 0.3%;
 }
+
+#nav-bar {
+    position: sticky;
+    top: 0px;
+    margin-top: 0;
+    /* width:100% */
+    background-color: #6676be;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
 #nav-bar ul {
-    list-style: none; /* Remove default bullet points */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    display: flex; /* Make the list items display inline for horizontal layout */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 #nav-bar li {
-    margin:16px;/* Add some margin between list items */
-    
+    margin: 13px;
 } 
 
 #nav-bar a {
-    /* margin: auto; */
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
-    text-decoration: none; /* Remove underline from links */
-    color: #ffffff; /* Example text color */
-    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-weight: bold;
     margin-top: 10px;
     line-height: 50px;
     transition: color 0.3s ease;
 }
-#nav-bar a:hover{
+
+#nav-bar a:hover {
     color: rgb(0, 0, 0);
 }
-button {
+
+.fixed-navbar {
+    margin-top: 0;
+    background-color: #6676be;
+    height: 10%;
+    display: flex;
+    width: 100%; /* Full width */
+    align-items: center;
+    justify-content: center; /* Below the logos */
+ 
+}
+
+#buttoni {
     padding-top: 5px;
     align-items: center;
     width: 145px;
@@ -117,17 +142,401 @@ button {
     margin-top: 5px;
     text-transform: uppercase;
   }
-  button:active {
-    /* set time duration to your needs */
+  #buttoni:active {
+    /*set time duration to your needs */
     animation: gradient 100ms;
     background: #e6e6e6;
     color: #000000;
     box-shadow:none;
   }
  #iiitm{
-    width:100vw;
-    height:8vh;
+    width:100%;    
+    height:75.6vh;
  }
- #over{
-    color: gray;
+ #over1{
+    color: rgb(20, 28, 61);
+    text-align:center;   
+    font-family:math;
+    font-weight: 600;
+    font-size: 39px;
  }
+ #book{
+    
+  position: relative;
+  left: 23.5%;
+  margin-top: 0.2px;
+ }
+ #dash1{
+    position: relative;
+    left: 23%;
+    margin-top: 0.2px;
+ }
+ #dash2{
+    position: relative;
+    left: 24%;
+    margin-top: 0.2px;
+
+ }
+ #diya{
+    width: 500px;
+    height: 310px;
+    margin-top: 120px;
+    margin-left: 40px;
+ }
+ #frame {
+    position: fixed; /* Keep it positioned over main content */
+    top: 50%; /*Center vertically */
+    left: 50%;/* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning for centering */
+    background-color: #ffffff; /* Example background color */
+    padding: 20px;
+    border: 1px solid #ccc; /* Example border */
+    border-radius: 5px;
+    width: 60vw; /* Set a maximum width for the frame */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Example shadow */
+    display: none; /* Initially hidden */
+    opacity: 100;
+    z-index: 1000;
+}
+
+#frame.visible {
+    display: block; /* Show the frame on button click */
+    opacity: 100%;
+}
+
+#programs, #facilities {
+    padding-right: 10px;
+}
+
+#box1{
+    width: 29.6%;
+    position: relative;
+    left:5%;
+    margin-top:5.7%;
+    padding: 10px;
+    border: 10px solid rgb(128, 128, 128);
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+#out-box{
+    display: flex;
+    padding-bottom: 5%;
+    margin-top: 45px;
+    /* padding-top: 20px; */
+    
+}
+#box2{
+    width: 32%;
+    position: relative;
+    left:7%;
+    margin-top:5.7%;
+    padding: 5px;
+    border: 10px solid rgb(128, 128, 128);
+    z-index: 1;
+    max-height: 350px;
+    overflow: hidden;
+}
+.bro{
+    width: 20%;
+    border:10px solid rgb(128, 128, 128) ;
+    position: relative;
+    left: 9%;
+    margin-top: 17.5%;
+    height: 130px;
+   }
+#wall{
+     width: 300px;
+     height: 230px;
+     position: absolute;
+     /* margin-top: 23px; */
+     margin-left: 8.7%;
+
+   }
+ #pic{
+    position: relative;
+    left: 30.5%;
+    padding-top: 3%;
+ }
+#frame1 {
+    position: fixed; /* Keep it positioned over main content */
+    top: 50%; /*Center vertically */
+    left: 50%;/* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning for centering */
+    background-color: #ffffff; /* Example background color */
+    padding: 20px;
+    border: 1px solid #ccc; /* Example border */
+    width: 70vw; /* Set a maximum width for the frame */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Example shadow */
+    display: none; /* Initially hidden */
+    opacity: 100;
+    border-radius: 5px;
+}
+
+#facilities, #programs {
+    max-height: 65vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#dept>li>a {
+    text-decoration: none;
+    color: #005cbd;
+}
+
+#dept>li>a:visited {
+    color: #005cbd;
+}
+#brochure{
+    text-decoration: none;
+    color: #150d39;
+ position: relative;
+ top: 27px;
+right: 49px;
+font-size: 16px;
+font-weight: bold;
+}
+
+#frame1.visible {
+    display: block; /* Show the frame on button click */
+    opacity: 100%;
+}
+
+
+#close-button, #close-button1 {
+    background-color: rgb(215, 9, 9);
+    position: fixed; /* Keep the container fixed at the top */
+    top: 20px; /* Adjust top position */
+    right: 50px; 
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-button1:hover {
+    background-color: rgb(185, 9, 9);
+}
+
+#open-button, #open-button1{
+    position: absolute;
+    bottom: 5px;
+    border:2px solid black;
+    margin:0 0 3px 3px;
+    border-radius: 4px;
+    padding:5px 10px;
+    font-size: 14px;
+    background-color: rgb(63, 51, 150);
+    color:white
+}
+
+.overlay {
+    display: none;
+}
+.visible {
+    display: block;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; /* Ensure overlay is above other content */
+}
+
+
+
+
+.fancy {
+    padding: 2em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding-bottom: 4em;
+  
+    /* At the bottom of our background stack,
+       let's have a misty grey solid color */
+    background-color:rgb(200, 199, 199);
+    /* z-index: -100; */
+  
+    /* We stack linear gradients on top of each
+       other to create our color strip effect.
+       As you will notice, color gradients are
+       considered to be images and can be
+       manipulated as such */
+    background-image: linear-gradient(175deg, rgb(0 0 0 / 0%) 95%, #17046c 95%),
+    linear-gradient( 85deg, rgb(0 0 0 / 0%) 97%, #17046c 95%),
+    linear-gradient(175deg, rgb(0 0 0 / 0%) 91%, #6676be 60%),
+    linear-gradient( 85deg, rgb(0 0 0 / 0%) 95.3%, #6676be 86%),
+    linear-gradient(175deg, rgb(0 0 0 / 0%) 87%, #96bdef 80%),
+    linear-gradient( 85deg, rgb(0 0 0 / 0%) 93.5%, #9cbdef 83%),
+    linear-gradient( 85deg, rgb(0 0 0 / 0%) 98%, #90c3cb 80%);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+.fancy>div>h1 {
+    text-align: center;
+    color: rgb(28, 16, 82);
+    font-size: 28px;
+    font-family: math;
+}
+
+#whymatter {
+    width: 70vw;
+    font-family: Inter, Helvetica Neue, sans-serif;
+}
+
+#whymatter>p { 
+    text-align: justify;
+    color: rgb(15, 22, 71);
+}
+
+  .director{
+    height: 350px;
+    width: 500px; 
+    /* margin-top: 80px; */
+    margin-left: 20px;
+  }
+ 
+  .msg-container{
+    display: flex;
+    margin-top: 120px;
+   
+  }
+  .dirmsg{
+    height: 400px;
+    width: 730px;
+    background-color: #b3d0f8;
+    /* margin-top: 60px; */
+    margin-left: 55px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+  }
+
+  #dirname{
+    float:right;
+
+  }
+  #head{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    
+    
+  }
+  .cdpmsg{
+    height: 400px;
+    width: 880px;
+    background-color: #b3d0f8;
+    margin-top: 65px;
+    margin-left: 40px;
+    border-radius: 20px;
+    padding:20px 10px 20px 10px;
+
+  }
+  .timeline{
+    position: relative;
+   max-width: 1200px;
+    margin: 230px auto;
+  }
+  .s-container{
+    padding: 10px 40px;
+    position: relative;
+    width: 25%;
+   
+  }
+  .s-container.right-container{
+    background-image: linear-gradient(to right,#9cbdef, #17046c);
+    margin-left: 40px;
+
+  }
+  .s-container.left-container{
+    background-image: linear-gradient(to left,#9cbdef, #17046c);
+    margin-left: 30px;
+  }
+  .text-box{
+
+    padding: 20px 30px;
+    background: #dbdbdb;
+    position: relative;
+    border-radius: 6px;
+    font-size:15px ;
+
+  }
+  .left-container{
+    left: 13.5%;
+  }
+  .right-container{
+    left: 50.5%;
+  }
+  .s-container img{
+    position: absolute;
+    width: 45px;
+    border-radius: 40%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+  }
+  .right-container img{
+    left: -58.5px;
+  }
+  .timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    top: 0px;
+    height: 670px;
+    background: black;
+    left: 50.73%;
+    margin-left: -3px;
+    z-index: 0;
+    animation: CSSscrollReveal ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+  @keyframes CSSscrollReveal{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+  }
+  .left-container img{
+
+  }
+  .left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 36px;
+    z-index: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #96bdef;
+    right: -14.5px;
+  }
+  .right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 36px;
+    z-index: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #96bdef;
+    left: -12.5px;
+
+  }
